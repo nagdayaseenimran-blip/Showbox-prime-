@@ -17,7 +17,7 @@ jobs:
           channel: 'stable'
 
       - name: Fix Missing Android Files
-        run: flutter create . --overwrite
+        run: flutter create --project-name showbox_prime . --overwrite
 
       - name: Install Dependencies
         run: flutter pub get
@@ -30,4 +30,3 @@ jobs:
         with:
           name: flickbizz-app-release
           path: build/app/outputs/flutter-apk/app-release.apk
-          
