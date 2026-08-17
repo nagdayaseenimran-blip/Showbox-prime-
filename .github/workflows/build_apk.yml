@@ -16,8 +16,10 @@ jobs:
           flutter-version: '3.19.x'
           channel: 'stable'
 
-      - name: Fix Missing Android Files
-        run: flutter create --project-name showbox_prime . --overwrite
+      - name: Generate Android Files & Restore Code
+        run: |
+          flutter create --project-name showbox_prime . --overwrite
+          git checkout lib/main.dart pubspec.yaml android/app/src/main/AndroidManifest.xml
 
       - name: Install Dependencies
         run: flutter pub get
